@@ -24,6 +24,16 @@ class Hero:
     pprint(self.stats1)
     print('Release Date:', self.release_date)
 
+  def get_json(self):
+    return {'name': self.name,
+            'epithet': self.epithet,
+            'weapon_type': self.weapon_type,
+            'movement_type': self.movement_type,
+            'stats1': self.stats1,
+            'stats40': self.stats40,
+            'release_date': self.release_date
+            }
+
 url = 'https://feheroes.gamepedia.com/Hero_list'
 page = requests.get(url)
 soup = BeautifulSoup(page.text, 'html.parser')
